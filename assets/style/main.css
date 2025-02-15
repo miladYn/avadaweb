@@ -562,7 +562,7 @@ section.goals {
 
         >div:last-of-type {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 60px;
 
             >div {
@@ -574,6 +574,8 @@ section.goals {
 
                 >div:first-of-type {
                     background-color: var(--bgc-box);
+                    display: flex;
+                    flex-direction: column;
 
                     &:hover {
                         transform: translateY(-55px);
@@ -617,7 +619,7 @@ section.goals {
                     }
 
                     >div:last-of-type {
-                        margin-top: 25px;
+                        margin-top: auto;
 
                         >a {
                             padding: 15px 25px;
@@ -638,7 +640,10 @@ section.goals {
                 >div:last-of-type {
                     color: var(--color-white);
                     background-color: var(--color-red);
+                    text-align: center;
                     width: 350px;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
                     height: 70px;
                     margin-top: -65px;
                     z-index: -1;
@@ -1502,6 +1507,7 @@ footer {
 
                 &:hover {
                     background-color: var(--color-red);
+
                     &::before {
                         content: attr(data-socials);
                         display: flex;
@@ -1520,18 +1526,23 @@ footer {
                 }
             }
         }
-        >div:last-of-type{
+
+        >div:last-of-type {
             margin: 30px 0;
             font-size: 20px;
-            >h6{
+
+            >h6 {
                 color: var(--text-color);
-                >a{
+
+                >a {
                     color: var(--color-red-opacity);
-                    &:hover{
+
+                    &:hover {
                         color: var(--color-red);
                         text-decoration: underline double var(--color-red);
                     }
-                    &:focus{
+
+                    &:focus {
                         text-decoration: underline double var(--color-red-opacity);
                     }
                 }
